@@ -30,4 +30,4 @@ const github = require('@actions/github');
     }
 // }
 
-run()
+// run()
