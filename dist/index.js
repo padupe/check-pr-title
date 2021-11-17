@@ -8500,7 +8500,13 @@ async function run() {
         let validateTitle = PRDefault.test(titlePR)
 
         if ( validateTitle === true ) {
-            _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('Título de Pull Request no Padrão')
+            _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("RESULT", 'Título de Pull Request no Padrão')
+
+            let idJira = validateTitle.split("(")
+            idJira = idJira[0]
+
+            _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("DATA", idJira)
+
         } else {
             _actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed('ERRO. Título da Pull Request não está no padrão.\ntipoPR(IDJIRA): Descrição.')
         }

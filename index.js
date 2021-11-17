@@ -10,7 +10,13 @@ async function run() {
         let validateTitle = PRDefault.test(titlePR)
 
         if ( validateTitle === true ) {
-            core.setOutput('Título de Pull Request no Padrão')
+            core.setOutput("RESULT", 'Título de Pull Request no Padrão')
+
+            let idJira = validateTitle.split("(")
+            idJira = idJira[0]
+
+            core.setOutput("DATA", idJira)
+
         } else {
             core.setFailed('ERRO. Título da Pull Request não está no padrão.\ntipoPR(IDJIRA): Descrição.')
         }
