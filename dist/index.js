@@ -8500,7 +8500,7 @@ async function run() {
         let validateTitle = PRDefault.test(titlePR)
 
         if ( validateTitle === true ) {
-            _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("RESULT", 'Título de Pull Request no Padrão')
+            // core.setOutput("RESULT", 'Título de Pull Request no Padrão')
 
             let idJira = titlePR.split("(").pop().split(")")[0];
 

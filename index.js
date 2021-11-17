@@ -10,7 +10,7 @@ async function run() {
         let validateTitle = PRDefault.test(titlePR)
 
         if ( validateTitle === true ) {
-            core.setOutput("RESULT", 'Título de Pull Request no Padrão')
+            // core.setOutput("RESULT", 'Título de Pull Request no Padrão')
 
             let idJira = titlePR.split("(").pop().split(")")[0];
 
