@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-// async function run() {
+async function run() {
     try {
         let titlePR = github.context.payload.pull_request.title;
 
@@ -12,12 +12,7 @@ const github = require('@actions/github');
         if ( validateTitle === true ) {
             core.setOutput("RESULT", 'Título de Pull Request no Padrão')
 
-            // console.log('1', titlePR.split("("))
-            // console.log('2', titlePR.split("(").pop())
-            // console.log('3', titlePR.split("(").pop().split(")"))
-
             let idJira = titlePR.split("(").pop().split(")")[0];
-            // console.log('TEST', idJira)
 
             core.setOutput("DATA", idJira)
             
@@ -28,6 +23,6 @@ const github = require('@actions/github');
     } catch (e) {
         core.setFailed(`Essa ação só será executada em uma Pull Request.\nERRO: ${e}.`)
     }
-// }
+}
 
-// run()
+run()

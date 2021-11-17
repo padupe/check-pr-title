@@ -8445,7 +8445,7 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(5127);
 const github = __nccwpck_require__(3134);
 
-// async function run() {
+async function run() {
     try {
         let titlePR = github.context.payload.pull_request.title;
 
@@ -8456,12 +8456,7 @@ const github = __nccwpck_require__(3134);
         if ( validateTitle === true ) {
             core.setOutput("RESULT", 'Título de Pull Request no Padrão')
 
-            // console.log('1', titlePR.split("("))
-            // console.log('2', titlePR.split("(").pop())
-            // console.log('3', titlePR.split("(").pop().split(")"))
-
             let idJira = titlePR.split("(").pop().split(")")[0];
-            // console.log('TEST', idJira)
 
             core.setOutput("DATA", idJira)
             
@@ -8472,9 +8467,9 @@ const github = __nccwpck_require__(3134);
     } catch (e) {
         core.setFailed(`Essa ação só será executada em uma Pull Request.\nERRO: ${e}.`)
     }
-// }
+}
 
-// run()
+run()
 })();
 
 module.exports = __webpack_exports__;
