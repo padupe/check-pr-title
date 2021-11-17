@@ -19,8 +19,8 @@ async function run() {
             let idJira = titlePR.split("(").pop().split(")")[0];
             console.log('TEST', idJira)
 
-            core.setOutput("RESULT", 'Sucesso')
-
+            core.setOutput("RESULT", "Sucesso")
+            
         } else {
             core.setFailed('ERRO. Título da Pull Request não está no padrão.\ntipoPR(IDJIRA): Descrição.')
         }

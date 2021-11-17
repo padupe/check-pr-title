@@ -8509,8 +8509,8 @@ async function run() {
             let idJira = titlePR.split("(").pop().split(")")[0];
             console.log('TEST', idJira)
 
-            _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("RESULT", 'Sucesso')
-
+            _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("RESULT", "Sucesso")
+            
         } else {
             _actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed('ERRO. Título da Pull Request não está no padrão.\ntipoPR(IDJIRA): Descrição.')
         }
