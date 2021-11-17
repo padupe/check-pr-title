@@ -1,0 +1,18 @@
+name: 'check-pr-title'
+description: 'Check Pull Request Title'
+branding:
+  icon: "tag"
+  color: "purple"
+on: [pull_request]
+inputs:
+  GITHUB_TOKEN:
+    required: false
+  pass_on_octokit_error:
+    description: "force CI to pass if an octokit error (e.g. missing GITHUB_TOKEN) occurs"
+    default: false
+  configuration_path:
+    description: "config file path"
+    default: ".github/pr-title-checker-config.json"
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
