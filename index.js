@@ -12,8 +12,7 @@ async function run() {
         if ( validateTitle === true ) {
             core.setOutput("RESULT", 'Título de Pull Request no Padrão')
 
-            let idJira = validateTitle.split("(")
-            idJira = idJira[0]
+            let idJira = titlePR.split("(").pop().split(")")[0];
 
             core.setOutput("DATA", idJira)
 
