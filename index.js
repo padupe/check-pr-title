@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-async function run() {
+// async function run() {
     try {
         let titlePR = github.context.payload.pull_request.title;
 
@@ -28,6 +28,6 @@ async function run() {
     } catch (e) {
         core.setFailed(`Essa ação só será executada em uma Pull Request.\nERRO: ${e}.`)
     }
-}
+// }
 
 run()

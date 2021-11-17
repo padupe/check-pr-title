@@ -8445,7 +8445,7 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(5127);
 const github = __nccwpck_require__(3134);
 
-async function run() {
+// async function run() {
     try {
         let titlePR = github.context.payload.pull_request.title;
 
@@ -8472,7 +8472,7 @@ async function run() {
     } catch (e) {
         core.setFailed(`Essa ação só será executada em uma Pull Request.\nERRO: ${e}.`)
     }
-}
+// }
 
 run()
 })();
