@@ -1,11 +1,14 @@
+![img]()
+
 # Validação de estrutura do Título de uma PR
 _Action que valida a estrutura do Título de uma Pull Request_
+
 
 #
 
 *PADRÃO:*
 ```bash
-    tipo(PREFIX-00): Descição.
+    tipo(PREFIX-00): Descrição.
 ```
 
 #
