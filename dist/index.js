@@ -8442,9 +8442,6 @@ module.exports = require("zlib");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-// import * as core from '@actions/core';
-// import * as github from '@actions/github';
-
 const core = __nccwpck_require__(5127);
 const github = __nccwpck_require__(3134);
 
@@ -8457,16 +8454,16 @@ async function run() {
         let validateTitle = PRDefault.test(titlePR)
 
         if ( validateTitle === true ) {
-            // core.setOutput("RESULT", 'Título de Pull Request no Padrão')
+            core.setOutput("RESULT", 'Título de Pull Request no Padrão')
 
-            console.log('1', titlePR.split("("))
-            console.log('2', titlePR.split("(").pop())
-            console.log('3', titlePR.split("(").pop().split(")"))
+            // console.log('1', titlePR.split("("))
+            // console.log('2', titlePR.split("(").pop())
+            // console.log('3', titlePR.split("(").pop().split(")"))
 
             let idJira = titlePR.split("(").pop().split(")")[0];
-            console.log('TEST', idJira)
+            // console.log('TEST', idJira)
 
-            core.setOutput("RESULT", "Sucesso")
+            core.setOutput("DATA", idJira)
             
         } else {
             core.setFailed('ERRO. Título da Pull Request não está no padrão.\ntipoPR(IDJIRA): Descrição.')
