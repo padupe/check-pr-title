@@ -8502,7 +8502,12 @@ async function run() {
         if ( validateTitle === true ) {
             // core.setOutput("RESULT", 'Título de Pull Request no Padrão')
 
+            console.log('1', titlePR.split("("))
+            console.log('2', titlePR.split("(").pop())
+            console.log('3', titlePR.split("(").pop().split(")"))
+
             let idJira = titlePR.split("(").pop().split(")")[0];
+            console.log('TEST', idJira)
 
             _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("DATA", `${idJira}`)
 
