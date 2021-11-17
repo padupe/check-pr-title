@@ -15,7 +15,7 @@ _Action que valida a estrutura do Título de uma Pull Request_
 
 _*Exemplo:*_
 ```bash
-    feat(ISSUE-159): Implements Swaager.
+    feat(ISSUE-159): Implements Swagger.
 ```
 
 #
