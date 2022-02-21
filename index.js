@@ -6,18 +6,23 @@ async function run() {
         let titlePR = github.context.payload.pull_request.title;
 
         let PRDefault = /[a-z]+\([A-Z]+-\d+\):.*/
+        let PRHotFix = /(hotfix)+\:.*/
         
+        console.log("Passo 2")
+
         let validateTitle = PRDefault.test(titlePR)
+        let validateHotFix = PRHotFix.test(titlePR)
 
-        if ( validateTitle === true ) {
-            core.setOutput("RESULT", 'Título de Pull Request no Padrão')
+        console.log("Passo 3 - Validação via IF")
 
-            let idJira = titlePR.split("(").pop().split(")")[0];
-
-            core.setOutput("DATA", idJira)
-            
-        } else {
-            core.setFailed('ERRO. Título da Pull Request não está no padrão.\ntipoPR(IDJIRA): Descrição.')
+        if ( validateTitle == false && validateHotFix == false) {
+            core.setFailed('ERRO. Título da Pull Request não está no padrão.\n"tipoPR(IDJIRA): Descrição." ou "hotfix: descrição."')
+        } else if (validateTitle == true && validateHotFix == false) {
+            core.setOutput('Título permite que a GMUD pode ser criada.')
+            return true
+        } else if (validateTitle == false && validateHotFix == true) {
+            core.setOutput('Hotfix, não será criada a GMUD.')
+            return true
         }
 
     } catch (e) {
