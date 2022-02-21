@@ -8475,14 +8475,8 @@ async function run() {
     try {
         let titlePR = github.context.payload.pull_request.title;
 
-        let all = github
-        let context = github.context
-        let payload = github.context.payload
-        let PR = github.context.payload.pull_request
+        let PR = github.context.payload.pull_request.links
 
-        console.log("ALL", all)
-        console.log("CONTEXT", context)
-        console.log("PAYLOAD", payload)
         console.log("PULL REQUEST", PR)
 
         let PRDefault = /[a-z]+\([A-Z]+-\d+\):.*/
