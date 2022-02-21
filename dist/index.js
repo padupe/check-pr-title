@@ -8495,6 +8495,8 @@ async function run() {
             return true
         }
 
+        console.log("Terminou")
+
     } catch (e) {
         core.setFailed(`Essa ação só será executada em uma Pull Request.\nERRO: ${e}.`)
     }
