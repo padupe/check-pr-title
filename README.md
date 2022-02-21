@@ -46,6 +46,7 @@ Apagar todas as tag's remotas:
     git push origin --delete $(git tag -l)
 ```
 
+Realizar o push das Tag's:
 ```bash
     git push --follow-tags
 ```
