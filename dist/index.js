@@ -8483,7 +8483,7 @@ async function run() {
         console.log("ALL", all)
         console.log("CONTEXT", context)
         console.log("PAYLOAD", payload)
-        console.log("PULL REQUEST", context)
+        console.log("PULL REQUEST", PR)
 
         let PRDefault = /[a-z]+\([A-Z]+-\d+\):.*/
         let PRHotFix = /(hotfix)+\:.*/
