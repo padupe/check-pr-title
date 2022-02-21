@@ -36,6 +36,16 @@ Adicionar Tag:
     git tag -a -m "Your Message" v{number}
 ```
 
+Apagar todas as tag's no ambiente local:
+```bash
+    git tag -d $(git tag -l)
+```
+
+Apagar todas as tag's remotas:
+```bash
+    git push origin --delete $(git tag -l)
+```
+
 ```bash
     git push --follow-tags
 ```
