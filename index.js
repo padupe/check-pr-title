@@ -5,10 +5,6 @@ async function run() {
     try {
         let titlePR = github.context.payload.pull_request.title;
 
-        let PR = github.context.payload.pull_request.links
-
-        console.log("PULL REQUEST", PR)
-
         let PRDefault = /[a-z]+\([A-Z]+-\d+\):.*/
         let PRHotFix = /(hotfix)+\:.*/
 
